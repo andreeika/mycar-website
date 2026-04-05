@@ -32,6 +32,7 @@ body {
 
 /* ── UTILS ── */
 .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+@media (max-width: 640px) { .container { padding: 0 16px; } }
 .gradient-text {
   background: linear-gradient(135deg, var(--blue), var(--purple));
   -webkit-background-clip: text;
@@ -319,6 +320,15 @@ body {
   border-radius: 50%;
   background: linear-gradient(135deg, var(--blue), var(--purple));
   flex-shrink: 0;
+}
+.mock-icon-svg {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px; height: 36px;
+  background: rgba(255,255,255,0.05);
+  border-radius: 8px;
+  margin-bottom: 2px;
 }
 .mock-line {
   height: 8px;
@@ -815,6 +825,8 @@ body {
     flex-direction: column;
     text-align: center;
     padding-top: 100px;
+    padding-bottom: 60px;
+    gap: 40px;
   }
   .hero-content { max-width: 100%; }
   .hero-sub { margin: 0 auto 40px; }
@@ -824,8 +836,15 @@ body {
   .section-title.left { text-align: center; }
   .about-text p { text-align: center; }
   .tech-list { align-items: center; }
+  .features { padding: 70px 0; }
+  .how { padding: 70px 0; }
+  .screens { padding: 70px 0; }
+  .about { padding: 70px 0; }
+  .download { padding: 80px 0; }
 }
+
 @media (max-width: 640px) {
+  /* Nav */
   .nav-links { display: none; }
   .nav-links.open {
     display: flex;
@@ -837,13 +856,104 @@ body {
     padding: 24px;
     gap: 20px;
     border-bottom: 1px solid var(--border);
+    z-index: 99;
   }
   .burger { display: flex; }
-  .hero-phone { display: none; }
-  .steps { flex-direction: column; }
-  .step-arrow { transform: rotate(90deg); }
-  .about-cards { grid-template-columns: 1fr; }
-  .screens-row { flex-direction: column; align-items: center; }
+
+  /* Hero */
+  .hero {
+    padding: 90px 16px 50px;
+    gap: 32px;
+  }
+  .hero-title { font-size: clamp(30px, 8vw, 42px); }
+  .hero-sub { font-size: 15px; }
+  .btn-primary, .btn-secondary { padding: 12px 22px; font-size: 15px; }
+  .hero-phone { display: flex; justify-content: center; }
+  .hero-phone-img { width: min(260px, 72vw); border-radius: 28px; }
+  .hero-stats { gap: 16px; }
+  .stat-num { font-size: 18px; }
+
+  /* Sections padding */
+  .features { padding: 56px 0; }
+  .how { padding: 56px 0; }
+  .screens { padding: 56px 0; }
+  .about { padding: 56px 0; }
+  .download { padding: 64px 0; }
+
+  /* Section text */
+  .section-title { font-size: clamp(22px, 6vw, 32px); margin-bottom: 12px; }
+  .section-sub { font-size: 14px; margin-bottom: 40px; }
+  .section-label { font-size: 11px; }
+
+  /* Features grid */
+  .features-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+    margin-top: 36px;
+  }
+  .feature-card { padding: 20px; }
+
+  /* Steps */
+  .steps { flex-direction: column; align-items: stretch; }
+  .step-arrow { transform: rotate(90deg); text-align: center; }
+  .step { max-width: 100%; }
+
+  /* Screens */
+  .screens-row {
+    flex-direction: row;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    justify-content: flex-start;
+    align-items: flex-end;
+    padding: 0 16px 16px;
+    gap: 16px;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+  .screens-row::-webkit-scrollbar { display: none; }
+  .screen-item { flex-shrink: 0; }
   .screen-item.featured .screen-phone { transform: none; }
+  .screen-phone--img img { width: 160px; }
+
+  /* About */
+  .about-grid { gap: 32px; }
+  .about-cards { grid-template-columns: 1fr 1fr; gap: 12px; }
+  .about-card { padding: 16px; }
+  .about-card-icon { font-size: 22px; margin-bottom: 8px; }
+  .about-card h4 { font-size: 13px; }
+  .about-card p { font-size: 12px; }
+
+  /* Download */
+  .dl-title { font-size: clamp(26px, 7vw, 40px); }
+  .dl-sub { font-size: 15px; }
+  .btn-download { padding: 14px 24px; gap: 12px; border-radius: 16px; }
+  .btn-dl-platform { font-size: 17px; }
+  .dl-note { font-size: 12px; padding: 0 16px; text-align: center; }
+
+  /* Footer */
   .footer-inner { flex-direction: column; text-align: center; }
+  .footer-links { justify-content: center; }
+}
+
+@media (max-width: 380px) {
+  .hero-phone-img { width: 90vw; }
+  .about-cards { grid-template-columns: 1fr; }
+  .screens-row { padding: 0 12px 12px; }
+  .screen-phone--img img { width: 140px; }
+}
+
+/* ── LOGO & HERO PHONE IMG ── */
+.nav-logo-img {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+  border-radius: 6px;
+}
+.hero-phone-img-wrap { position: relative; z-index: 1; }
+.hero-phone-img {
+  width: 280px;
+  height: auto;
+  display: block;
+  border-radius: 36px;
+  box-shadow: 0 40px 80px rgba(0,0,0,0.5);
 }
