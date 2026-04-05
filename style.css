@@ -619,6 +619,23 @@ body {
 .sp-refuel-date { font-size: 10px; color: var(--text2); margin-top: 2px; }
 .sp-refuel-price { font-size: 12px; font-weight: 700; color: var(--green); flex-shrink: 0; }
 .screen-label { font-size: 14px; color: var(--text2); font-weight: 500; }
+.screen-phone--img {
+  padding: 0;
+  background: none;
+  border: none;
+  box-shadow: none;
+  overflow: visible;
+}
+.screen-phone--img img {
+  width: 220px;
+  height: auto;
+  display: block;
+  border-radius: 28px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+}
+.screen-item.featured .screen-phone--img img {
+  box-shadow: 0 40px 80px rgba(139,92,246,0.2);
+}
 
 /* ── ABOUT ── */
 .about { padding: 100px 0; }
