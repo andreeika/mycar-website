@@ -641,7 +641,8 @@ body {
   height: auto;
   display: block;
   border-radius: 28px;
-  box-shadow: 0 20px 40px rgba(0,0,0,0.5), 0 0 0 1px rgba(255,255,255,0.18);
+  outline: 1.5px solid rgba(255,255,255,0.2);
+  box-shadow: 0 0 0 1px rgba(99,179,237,0.25), 0 20px 40px rgba(0,0,0,0.5);
 }
 .screen-item.featured .screen-phone--img img {
   box-shadow: 0 40px 80px rgba(139,92,246,0.2);
@@ -953,13 +954,15 @@ body {
 }
 
 .hero-mockup-img {
-  width: 260px;
+  width: 200px;
   height: auto;
   display: block;
   position: relative;
   z-index: 1;
-  filter: drop-shadow(0 40px 60px rgba(0,0,0,0.6));
+  border-radius: 32px;
+  outline: 1.5px solid rgba(255,255,255,0.2);
+  box-shadow: 0 0 0 1px rgba(99,179,237,0.25), 0 30px 60px rgba(0,0,0,0.6);
 }
 @media (max-width: 640px) {
-  .hero-mockup-img { width: min(220px, 65vw); }
+  .hero-mockup-img { width: min(180px, 60vw); }
 }
