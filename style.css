@@ -951,3 +951,15 @@ body {
   display: block;
   flex-shrink: 0;
 }
+
+.hero-mockup-img {
+  width: 260px;
+  height: auto;
+  display: block;
+  position: relative;
+  z-index: 1;
+  filter: drop-shadow(0 40px 60px rgba(0,0,0,0.6));
+}
+@media (max-width: 640px) {
+  .hero-mockup-img { width: min(220px, 65vw); }
+}
